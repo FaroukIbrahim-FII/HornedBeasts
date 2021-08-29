@@ -4,13 +4,9 @@ import React from 'react';
 class Footer extends React.Component {
     
     render() { 
-        return (           
-             
-               <h1>Farouk Ibrahim &copy;</h1>
-             
-
-
-        )
+        return (   
+             <h1>Farouk Ibrahim &copy;</h1>
+            )
       }
     }
 
