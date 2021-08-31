@@ -21,7 +21,7 @@ class HornedBeasts extends React.Component {
     }
     handleShow = ()=>{
         this.props.handleShow(this.props.title)
-        this.props.selectedBeastsFun(this.props.title, this.props.discription, this.props.imgSrc)
+        this.props.selectedBeastsFun(this.props.title, this.props.description, this.props.imgSrc)
     }
 
 
