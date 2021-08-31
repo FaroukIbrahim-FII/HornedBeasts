@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Col from 'react-bootstrap/Col';
 
 class HornedBeasts extends React.Component {
 
@@ -30,17 +31,19 @@ class HornedBeasts extends React.Component {
             //     <h2>{this.props.horns}</h2>
             // </div>
             // 
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={this.props.imgSrc} onClick={this.incrementnumberOfVotes} />
-                <Card.Body>
-                    <Card.Title>{this.props.title}</Card.Title>
-                    <Card.Text>
-                        ❤️ : {this.state.numberOfVotes}
-                    </Card.Text>
-                    <Card.Text>{this.props.description}</Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
+            <Col>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={this.props.imgSrc} onClick={this.incrementnumberOfVotes} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>
+                            ❤️ : {this.state.numberOfVotes}
+                        </Card.Text>
+                        <Card.Text>{this.props.description}</Card.Text>
+                        <Button variant="primary">Go somewhere</Button>
+                    </Card.Body>
+                </Card>
+            </Col>
         )
     }
 }
