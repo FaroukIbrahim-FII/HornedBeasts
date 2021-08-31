@@ -19,8 +19,14 @@ class HornedBeasts extends React.Component {
             numberOfVotes: this.state.numberOfVotes + 1
         })
     }
+    handleShow = ()=>{
+        this.props.handleShow(this.props.title)
+        this.props.selectedBeastsFun(this.props.title, this.props.discription, this.props.imgSrc)
+    }
+
 
     render() {
+
 
         return (
             // <div>
@@ -32,7 +38,7 @@ class HornedBeasts extends React.Component {
             // </div>
             // 
             <Col>
-                <Card style={{ width: '18rem' }}>
+                <Card style={{ width: '18rem' }} onClick = {this.handleShow}>
                     <Card.Img variant="top" src={this.props.imgSrc} onClick={this.incrementnumberOfVotes} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
