@@ -6,16 +6,18 @@ import Data from './Components/data.json';
 import SelectedBeast from './Components/SelectedBeast.js';
 
 
+
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       data: Data,
+      filteredData : Data,
       show: false,
-      title : '',
-      discription : '',
-      imgSrc : '',
+      title: '',
+      discription: '',
+      imgSrc: '',
     }
   }
 
@@ -35,9 +37,9 @@ class App extends React.Component {
 
   selectedBeastsFun = (title, discription, imgSrc) => {
     this.setState({
-      title : title,
-      discription : discription,
-      imgSrc : imgSrc,
+      title: title,
+      discription: discription,
+      imgSrc: imgSrc,
     })
 
     console.log(title);
@@ -49,25 +51,55 @@ class App extends React.Component {
     })
   }
 
+  getFilteredData = (item) =>{
+    this.setState({
+      filteredData : item,
+    })
+  }
+  // listFunction = event => {
+
+  //   this.setState({
+  //     selectedlist: event.target.value,
+  //   })
+
+  //   // console.log(this.state.selectedlist);
+
+  // }
+
+
+  // this.setState({
+  //   selectedData: filtered,
+
+  // })
+
+
   render() {
 
     return (
 
       <div>
         <Header />
+
         <Main
-          data={Data}
-          handleShow={this.handleShow}
-          selectedBeastsFun = {this.selectedBeastsFun}
+          listFunction={this.listFunction}
+          data={this.state.filteredData}
           
+
+
+          selectedlist={this.selectedlist}
+          handleShow={this.handleShow}
+          selectedBeastsFun={this.selectedBeastsFun}
+          getFilteredData={this.getFilteredData}
+
+
         />
         <SelectedBeast
           data={this.state.data}
           show={this.state.show}
           handleClose={this.handleClose}
-          title = {this.state.title}
-          discription = {this.state.discription}
-          imgSrc = {this.state.imgSrc}
+          title={this.state.title}
+          discription={this.state.discription}
+          imgSrc={this.state.imgSrc}
         />
         <Footer />
       </div>
